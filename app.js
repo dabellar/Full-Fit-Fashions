@@ -485,4 +485,7 @@ function errorHandler(err, req, res, next) {
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log("Listening on port " + PORT + "..."));
+app.listen(PORT, () => {
+    console.log("Listening on port " + PORT + "...");
+    console.log(`URL: localhost:${PORT}/index.html`);
+});
