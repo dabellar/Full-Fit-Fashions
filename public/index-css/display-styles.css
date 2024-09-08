@@ -1,0 +1,42 @@
+/* 
+    Name: Darleine Abellard
+    CS 132 SP 2024
+    Final Project
+    This is the style sheet for the display view of Full Fit Fashions.
+    It includes the layout of the display template for clothing, shoes and 
+    accessories.
+*/
+
+#display-view {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#display-view figure {
+    border: 1px solid black;
+    text-align: center;
+}
+
+#display-view img {
+    width: 200px; 
+}
+
+#display-view figure p {
+    margin: 2% 0%;
+}
+
+.ic-desc {
+    padding-left: 2%;
+    padding-right: 2%;
+    max-width: 200px;
+}
+
+.item-card:hover, .ic-desc:hover {
+    cursor: pointer;
+}
+
+.ic-desc:hover {
+    text-decoration: underline;
+}

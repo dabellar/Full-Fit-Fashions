@@ -1,0 +1,11 @@
+{
+    "name" : "green-bomber-jacket",
+    "img" : "green-bomber-jacket.png",
+    "price" : 42,
+    "size" : {
+        "smallS" : true,
+        "mediumS" : true,
+        "largeS" : true,
+        "x_largeS" : true
+    }
+}

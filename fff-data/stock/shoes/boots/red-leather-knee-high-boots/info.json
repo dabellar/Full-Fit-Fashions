@@ -1,0 +1,13 @@
+{
+    "name" : "red-leather-knee-high-boots",
+    "img" : "red-leather-knee-high-boots.png",
+    "price" : 59,
+    "size" : {
+        "6" : true,
+        "7" : true,
+        "8" : true,
+        "9" : true,
+        "10" : true,
+        "11" : true
+    }
+}

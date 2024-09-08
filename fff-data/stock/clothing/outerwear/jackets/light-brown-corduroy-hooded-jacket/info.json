@@ -1,0 +1,11 @@
+{
+    "name" : "light-brown-corduroy-hooded-jacket",
+    "img" : "light-brown-corduroy-hooded-jacket.png",
+    "price" : 24,
+    "size" : {
+        "smallS" : true,
+        "mediumS" : true,
+        "largeS" : true,
+        "x_largeS" : true
+    }
+}

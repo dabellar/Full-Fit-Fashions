@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!-- 
+    Name: Darleine Abellard
+    CS 132 SP 2024 
+    Final Project: Full Fit Fashions
+    This is the index.html for Full Fit Fashions, a store where users create and 
+    buy full outfits. This file includes the outfit-maker section, the display
+    format, single product view, and the cart.
+
+    Photo Credits: All clothing is from Cider (https://www.shopcider.com/)
+    I've recently looked into Cider, and they have a really low sustainability/ethics
+    rating and not extremely size inclusive, so I'm not endorsing them. However, they 
+    photograph a lot of their straight size products uniformly and without models, 
+    so it's good for a school project with citation requirements. 
+ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FULL FIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LOGO CREDITS - Mix of:
+            https://www.flaticon.com/free-icons/mannequin" created by Icongeek26 
+            https://www.flaticon.com/free-icons/choose" created by juicy_fish
+    -->
+    <link rel="shortcut icon" href="imgs/website-logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Moirai+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index-css/styles.css">
+    <link rel="stylesheet" href="index-css/outfit-maker-styles.css">
+    <link rel="stylesheet" href="index-css/display-styles.css">
+    <link rel="stylesheet" href="index-css/product-styles.css">
+    <link rel="stylesheet" href="index-css/cart-styles.css">
+    <script src="utils.js"></script>
+    <script src="cart-functionality.js"></script>
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="imgs/website-logo.png" alt="Full Fit Fashions logo">
+            <h1>FULL FIT FASHIONS</h1>
+            <!-- Source (animated and static): https://www.flaticon.com/free-animated-icons/shopping-bag  created by Freepik - Flaticon -->
+            <img id="cart-icon" src="imgs/shopping-bag-static.png" alt="shopping bag static">
+        </div>
+        <p><span>Total Outfits for Total Confidence</span></p>
+        <nav>
+            <ul>
+                <li class="curr-view"><h2>Outfit Maker</h2></li>
+                <li id="clothing"><h2>Clothing</h2></li>
+                <li id="shoes"><h2>Shoes</h2></li>
+                <li id="accessories"><h2>Accessories</h2></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- FOR REFLECTION: IF I COULD CHANGE THINGS, I WOULD DYNAMICALLY POPULATE THIS -->
+        <!-- <aside class="" id="filter-collapsible">
+            <h3>Filter By Category</h3>
+            <details class="" id="filter-tops">
+                <summary>Tops</summary>
+                <ul>
+                    <li><label>
+                        <input name="No-Sleeved" type="checkbox">No Sleeves
+                    </label></li>
+                    <li><label>
+                        <input name="Long-Sleeved" type="checkbox">Long Sleeved
+                    </label></li>
+                    <li><label>
+                        <input name="Short-Sleeved" type="checkbox">Short Sleeved
+                    </label></li>
+                </ul>
+            </details>
+            <details class="" id="filter-bottoms">
+                <summary>Bottoms</summary>
+                <ul>
+                    <li><label>
+                        <input name="Jeans" type="checkbox">Jeans
+                    </label></li>
+                    <li><label>
+                        <input name="Pants" type="checkbox">Pants
+                    </label></li>
+                    <li><label>
+                        <input name="Shorts" type="checkbox">Shorts
+                    </label></li>
+                    <li><label>
+                        <input name="Skirts" type="checkbox">Skirts
+                    </label></li>
+                </ul>
+            </details>
+            <details class="" id="filter-outerwear">
+                <summary>Outerwear</summary>
+                <ul>
+                    <li><label>
+                        <input name="Jackets" type="checkbox">Jackets
+                    </label></li>
+                    <li><label>
+                        <input name="Sweaters" type="checkbox">Sweaters
+                    </label></li>
+                    <li><label>
+                        <input name="Sweatshirts" type="checkbox">Sweatshirts
+                    </label></li>
+                </ul>
+            </details>
+            <details class="" id="filter-shoes">
+                <summary>Shoes</summary>
+                <ul>
+                    <li><label>
+                        <input name="Boots" type="checkbox">Boots
+                    </label></li>
+                    <li><label>
+                        <input name="Flats" type="checkbox">Flats
+                    </label></li>
+                    <li><label>
+                        <input name="Heels" type="checkbox">Heels
+                    </label></li>
+                    <li><label>
+                        <input name="Sandals" type="checkbox">Sandals
+                    </label></li>
+                    <li><label>
+                        <input name="Sneakers" type="checkbox">Sneakers
+                    </label></li>    
+                </ul>
+            </details>
+            <details class="" id="filter-accessories">
+                <summary>Accessories</summary>
+                <ul>
+                    <li><label>
+                        <input name="Bags" type="checkbox">Bags
+                    </label></li>
+                    <li><label>
+                        <input name="Earrings" type="checkbox">Earrings
+                    </label></li>
+                    <li><label>
+                        <input name="Hair" type="checkbox">Hair Accessories
+                    </label></li>
+                    <li><label>
+                        <input name="Necklaces" type="checkbox">Necklaces
+                    </label></li>   
+                </ul>
+            </details>
+        </aside> -->
+
+        <!-- OUTFIT MAKER VIEW -->
+        <section class="" id="outfit-maker-view">
+            <!-- make outfit -->
+            <section id="om-mechanism">
+                <div id="visualizer">
+                    <div id="vis-outerwear"></div>
+                    <div id="vis-necklaces"></div>
+                    <div id="vis-earrings"></div>
+                    <div id="vis-head-accessories"></div>
+                    <div id="vis-bags"></div>
+                    <div id="vis-top"></div>
+                    <div id="vis-bottom"></div>
+                    <div id="vis-shoes"></div>
+                </div>
+                <article id="controls">
+                    <h3>Controls</h3>
+                    <!-- Source: https://www.flaticon.com/free-icons/arrows created by Freepik - Flaticon -->
+                    <div class="outfit-maker-nav">
+                        <button id="tops-backwards"> 
+                            <img src="imgs/fast-backward.png" alt="fast backwards">
+                        </button>
+                        <p>Tops</p>
+                        <button id="tops-forwards">
+                            <img src="imgs/fast-forward.png" alt="fast forwards">
+                        </button>
+                    </div>
+                    <div class="outfit-maker-nav">
+                        <button id="bottoms-backwards"> 
+                            <img src="imgs/fast-backward.png" alt="fast backwards">
+                        </button>
+                        <p>Bottoms</p>
+                        <button id="bottoms-forwards">
+                            <img src="imgs/fast-forward.png" alt="fast forwards">
+                        </button>
+                    </div>
+                    <div class="outfit-maker-nav">
+                        <button id="shoes-backwards"> 
+                            <img src="imgs/fast-backward.png" alt="fast backwards">
+                        </button>
+                        <p>Shoes</p>
+                        <button id="shoes-forwards">
+                            <img src="imgs/fast-forward.png" alt="fast forwards">
+                        </button>
+                    </div>
+                    <div class="outfit-maker-nav">
+                        <button id="hair-accessories-backwards"> 
+                            <img src="imgs/fast-backward.png" alt="fast backwards">
+                        </button>
+                        <p>Hair Accessories</p>
+                        <button id="hair-accessories-forwards">
+                            <img src="imgs/fast-forward.png" alt="fast forwards">
+                        </button>
+                    </div>
+                    <div class="outfit-maker-nav">
+                        <button id="earrings-backwards"> 
+                            <img src="imgs/fast-backward.png" alt="fast backwards">
+                        </button>
+                        <p>Earrings</p>
+                        <button id="earrings-forwards">
+                            <img src="imgs/fast-forward.png" alt="fast forwards">
+                        </button>
+                    </div>
+                    <div class="outfit-maker-nav">
+                        <button id="necklaces-backwards"> 
+                            <img src="imgs/fast-backward.png" alt="fast backwards">
+                        </button>
+                        <p>Necklaces</p>
+                        <button id="necklaces-forwards">
+                            <img src="imgs/fast-forward.png" alt="fast forwards">
+                        </button>
+                    </div>
+                    <div class="outfit-maker-nav">
+                        <button id="outerwear-backwards"> 
+                            <img src="imgs/fast-backward.png" alt="fast backwards">
+                        </button>
+                        <p>Outerwear</p>
+                        <button id="outerwear-forwards">
+                            <img src="imgs/fast-forward.png" alt="fast forwards">
+                        </button>
+                    </div>
+                    <div class="outfit-maker-nav">
+                        <button id="bag-backwards"> 
+                            <img src="imgs/fast-backward.png" alt="fast backwards">
+                        </button>
+                        <p>Bags</p>
+                        <button id="bag-forwards">
+                            <img src="imgs/fast-forward.png" alt="fast forwards">
+                        </button>
+                    </div>
+                    <p>Running Total: $<span id="est-tot-cost"></span></p>
+                </article>
+            </section>
+            <!-- pieces in outfit -->
+            <section id="outfit-pieces">
+                <!-- TEMPLATE: <figure>
+                    <img src="stock-imgs/brown-mermaid-maxi-skirt.png" alt="">
+                    <figcaption>
+                        <p class="ic-desc">Brown Mermaid Maxi Skirt</p>
+                        <p>Price: $20</p>
+                        <label for="size-select">Sizes:</label>
+                        <select name="outfit-sizes" class="size-select">
+                            <option value="one-size">--one size--</option>
+                        </select>
+                    </figcaption>
+                </figure> -->
+            </section>
+            <button id="add-to-cart">Add to Cart</button>
+            <section id="new-cart-error-msg" class="hidden">
+                <p>Click the "Keep Shopping!" button in the cart to keep shopping!</p>
+            </section>
+        </section>
+
+        <!-- DISPLAY (clothing, shoes, accessories) VIEW -->
+        <section class="hidden" id="display-view">
+            <!-- TEMPLATE: <figure class="item-card">
+                <img src="" alt="">
+                <figcaption>
+                    <p class="ic-desc">Silver Earrings</p>
+                    <p>Price: $20</p>
+                </figcaption>
+            </figure> -->
+        </section>
+
+        <!-- SINGLE ITEM VIEW -->
+        <section class="hidden" id="product-view">
+            <!-- TEMPLATE: <img src="" alt="pink bow shirt">
+            <article>
+                <h3>Pink Bow Shirt</h3>
+                <p>Price: $<span>35</span></p>
+                <p>Sizes Available:</p>
+                <div class="size">
+                    <span>L</span>
+                    <span>XL</span>
+                    <span>1X</span>
+                    <span>2X</span>
+                </div>
+            </article> -->
+        </section>
+
+        <!-- CART VIEW -->
+        <dialog>
+            <button id="close-cart-btn">
+                <!-- https://www.flaticon.com/free-icons/close created by Good Ware - Flaticon-->
+                <img id="close-cart-icon" src="imgs/close-icon.png" alt="close button">
+            </button>
+            <section id="dialog-top">
+                <p>Number of Outfits Made: <span id="number-of-outfits">0</span></p>
+            </section>
+            <section id="open-cart-view" class="hidden">
+                <div>
+                    <!-- TEMPLATE: <article>
+                        <img src="stock-imgs/cream-floral-maxi-skirt.png" alt="cream-floral-maxi-skirt">
+                        <div>
+                            <p>Cream Floral Maxi Skirt</p>
+                            <p>Price: $38</p>
+                            <label for="sizing">Size:</label>
+                            <select name="sizing" class="sizing">
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL" selected>XL</option>
+                            </select>
+                        </div>
+                    </article> -->
+                </div>
+                <p id="final-price">Total Price: $<span id="final-price-amount"></span></p>
+                <button id="buy-btn">Buy!</button> 
+            </section>
+            <section id="thank-you-message" class="hidden">
+                <p></p>
+                <p>
+                    If you want to buy these pieces in real life, 
+                    visit <a href="https://www.shopcider.com/">Cider</a>.
+                    This project is not an advertisement, but all the images 
+                    and prices used are from Cider.
+                </p>
+                <button id="shopping-spree">Keep Shopping!</button>
+            </section>
+        </dialog>
+    </main>
+    <footer>
+        <div>
+            <a id="faq-link" href="faq.html">FAQ</a>
+            <a id="contact-link" href="contact.html">Contact Us!</a>
+            <!-- <a id="admin-link" href="admin.html">Admin</a> -->
+        </div>
+        <p>Darleine Abellard &copy; 2024</p>
+    </footer>
+</body>
+</html>

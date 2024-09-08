@@ -1,0 +1,190 @@
+/* 
+    Name: Darleine Abellard
+    CS 132 SP 2024
+    Final Project
+    This is the style sheet for the outfit maker mechanism of Full Fit Fashions.
+    It includes the layout of the outfit visualizer and the item cards
+*/
+
+#outfit-pieces img {
+    width: 200px; 
+}
+
+#outfit-maker-view, #om-mechanism, #outfit-pieces,
+    .outfit-maker-nav, #controls {
+    display: flex;
+}
+
+#outfit-maker-view {
+    padding: 3% 2%;
+    width: 90%;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#om-mechanism {
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 97vh;
+    padding: 0%;
+    gap: 40px;
+}
+
+#outfit-pieces {
+    gap: 5%;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#outfit-pieces figure {
+    border: 1px solid black;
+    max-width: 200px;
+    text-align: center;
+    margin: 2%;
+}
+
+#outfit-pieces figure p {
+    margin: 2% 0%;
+}
+
+#outfit-pieces figcaption {
+    margin: 3%;
+}
+
+#add-to-cart {
+    background-color: black;
+    color: white;
+    border-radius: 0%;
+    padding: 2%;
+    width: 15%;
+    align-self: center;
+}
+
+#add-to-cart:hover {
+    background-color: #541388;
+}
+
+#new-cart-error-msg {
+    align-self: center;
+    font-weight: 700;
+}
+
+/* ------------------- VISUALIZER LAYOUT --------------------- */
+
+#visualizer {
+    position: relative;
+    width: 64%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 7%;
+}
+
+#visualizer * {
+    position: absolute;
+}
+
+#visualizer > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#vis-top {
+    width: 35%;
+    height: 40%;
+    top: 1%;
+    left: 8%;
+}
+
+#vis-bottom {
+    width: 39%;
+    height: 43%;
+    bottom: 22%;
+    left: 6%;
+}
+
+#vis-shoes {
+    width: 46%;
+    height: 24%;
+    bottom: 1%;
+    left: 2%;
+}
+
+#vis-outerwear {
+    width: 52%;
+    height: 53%;
+    bottom: 19%;
+    right: 0%;
+}
+
+#vis-earrings {
+    width: 37%;
+    height: 20%;
+    top: 15%;
+    right: 13%;
+}
+
+#vis-necklaces {
+    width: 37%;
+    height: 20%; 
+    top: 2%;
+    right: 0%;  
+}
+
+#vis-head-accessories {
+    width: 37%;
+    height: 20%;
+    top: 0%;
+    right: 22%;
+}
+
+#vis-bags {
+    width: 45%;
+    height: 25%;
+    bottom: 2%;
+    right: 0%;
+}
+
+.outfit-maker-nav {
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.outfit-maker-nav img{
+    height: 20px;
+}
+
+.outfit-maker-nav button {
+    height: fit-content;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10%;
+    padding: 2%;
+}
+
+.outfit-maker-nav button:hover {
+    background-color: #53138865;
+}
+
+.outfit-maker-nav button:active {
+    background-color: #f9509f51;
+}
+
+.outfit-maker-nav p {
+    margin: 0%;
+}
+
+#controls {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 34%;
+    height: fit-content;
+    padding: 1%;
+    border: 2px solid black;
+    border-radius: 10%;
+}
+

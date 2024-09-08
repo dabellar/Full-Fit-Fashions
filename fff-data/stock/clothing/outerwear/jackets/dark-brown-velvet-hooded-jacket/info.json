@@ -1,0 +1,11 @@
+{
+    "name" : "dark-brown-velvet-hooded-jacket",
+    "img" : "dark-brown-velvet-hooded-jacket.png",
+    "price" : 21,
+    "size" : {
+        "smallS" : true,
+        "mediumS" : true,
+        "largeS" : true,
+        "x_largeS" : true
+    }
+}
